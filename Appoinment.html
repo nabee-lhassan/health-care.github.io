@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web App</title>
+  <link rel="stylesheet" type="text/css" href="./css/css.css">
+  <link rel="stylesheet" type="text/css" href="./css/Calender.css">
+  <link rel="icon" type="image/x-icon" href="./image/VHnet logo.png">
+  <link rel="stylesheetCalender" href="./css/calender.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <div class="tabContainer">
+    <div class="buttonContainer">
+
+      <div class="div-user">
+        <div class="div-image"> <img src="./image/VHnet logo.png" alt=""></div>
+      
+      </div>
+      <a href="./Dashboard.html">
+      <button class=" tab-button " onclick="showPanel(0,'')">
+        <!-- <svg class="icon-svg ">
+          <image class="change-my-color" xlink:href="./image/Vector.png" src="./image/Vector.png" />
+        </svg> -->
+       
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+          <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+        </svg>
+        Dashboard</button>
+      </a>
+      
+      <a href="./Customers.html">  
+        <button class="tab-button  dropdown-toggle"  >
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+            <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+            <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
+          </svg>
+            
+          
+          Customers
+        </button>
+      </a>
+      
+
+      
+      <a href="./Products.html">  
+        <button class="tab-button  dropdown-toggle" > 
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1z"/>
+          </svg>
+          Products</button>
+        </a>
+      
+
+      <a href="./Appoinment.html">
+        <button class=" tab-button active dropdown-toggle" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-week-fill" viewBox="0 0 16 16">
+            <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+          </svg>
+          Appointments</button>
+        
+        </a>
+
+      
+<a href="./Order.html">
+        
+<button class=" tab-button dropdown-toggle" >
+  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-border" viewBox="0 0 16 16">
+    <path d="M0 0h.969v.5H1v.469H.969V1H.5V.969H0V0zm2.844 1h-.938V0h.938v1zm1.875 0H3.78V0h.938v1zm1.875 0h-.938V0h.938v1zm.937 0V.969H7.5V.5h.031V0h.938v.5H8.5v.469h-.031V1H7.53zm2.813 0h-.938V0h.938v1zm1.875 0h-.938V0h.938v1zm1.875 0h-.938V0h.938v1zM15.5 1h-.469V.969H15V.5h.031V0H16v.969h-.5V1zM1 1.906v.938H0v-.938h1zm6.5.938v-.938h1v.938h-1zm7.5 0v-.938h1v.938h-1zM1 3.78v.938H0V3.78h1zm6.5.938V3.78h1v.938h-1zm7.5 0V3.78h1v.938h-1zM1 5.656v.938H0v-.938h1zm6.5.938v-.938h1v.938h-1zm7.5 0v-.938h1v.938h-1zM.969 8.5H.5v-.031H0V7.53h.5V7.5h.469v.031H1v.938H.969V8.5zm1.875 0h-.938v-1h.938v1zm1.875 0H3.78v-1h.938v1zm1.875 0h-.938v-1h.938v1zm1.875-.031V8.5H7.53v-.031H7.5V7.53h.031V7.5h.938v.031H8.5v.938h-.031zm1.875.031h-.938v-1h.938v1zm1.875 0h-.938v-1h.938v1zm1.875 0h-.938v-1h.938v1zm1.406 0h-.469v-.031H15V7.53h.031V7.5h.469v.031h.5v.938h-.5V8.5zM0 10.344v-.938h1v.938H0zm7.5 0v-.938h1v.938h-1zm8.5-.938v.938h-1v-.938h1zM0 12.22v-.938h1v.938H0zm7.5 0v-.938h1v.938h-1zm8.5-.938v.938h-1v-.938h1zM0 14.094v-.938h1v.938H0zm7.5 0v-.938h1v.938h-1zm8.5-.938v.938h-1v-.938h1zM.969 16H0v-.969h.5V15h.469v.031H1v.469H.969v.5zm1.875 0h-.938v-1h.938v1zm1.875 0H3.78v-1h.938v1zm1.875 0h-.938v-1h.938v1zm.937 0v-.5H7.5v-.469h.031V15h.938v.031H8.5v.469h-.031v.5H7.53zm2.813 0h-.938v-1h.938v1zm1.875 0h-.938v-1h.938v1zm1.875 0h-.938v-1h.938v1zm.937 0v-.5H15v-.469h.031V15h.469v.031h.5V16h-.969z"/>
+  </svg>
+          Orders</button>
+
+        </a>
+
+        <a href="./Report.html">
+        <button class="tab-button  dropdown-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list-columns" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 0 .5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 2h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 4h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 6h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 8h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
+          </svg>
+          Reports</button>
+        
+        </a>
+
+      
+        <a href="./Inbox.html">
+        <button class=" tab-button dropdown-toggle" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-inboxes-fill" viewBox="0 0 16 16">
+            <path d="M4.98 1a.5.5 0 0 0-.39.188L1.54 5H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0A.5.5 0 0 1 10 5h4.46l-3.05-3.812A.5.5 0 0 0 11.02 1H4.98zM3.81.563A1.5 1.5 0 0 1 4.98 0h6.04a1.5 1.5 0 0 1 1.17.563l3.7 4.625a.5.5 0 0 1 .106.374l-.39 3.124A1.5 1.5 0 0 1 14.117 10H1.883A1.5 1.5 0 0 1 .394 8.686l-.39-3.124a.5.5 0 0 1 .106-.374L3.81.563zM.125 11.17A.5.5 0 0 1 .5 11H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0 .5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .496.562l-.39 3.124A1.5 1.5 0 0 1 14.117 16H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .121-.393z"/>
+          </svg>
+        
+
+          Inbox</button>
+        
+        </a>
+
+        <a href="./Profile.html">
+        <button class=" tab-button dropdown-toggle" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg>
+
+          Profile</button>
+        
+        </a>
+
+      
+      <a href="./Setting.html">  
+        <button class="tab-button  dropdown-toggle" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+          </svg>
+          Settings</button>
+        </a>
+      
+
+ <a href="./LogOut.html">
+        
+        <button class=" tab-button dropdown-toggle" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+          </svg>
+          Logout</button>
+        
+        </a>
+
+
+
+
+
+    </div>
+
+
+    <div class="tabPanel" id="Customer">
+      <div class="bg-image">
+        <div class="div-dashbord-top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6 col-sm-12">
+                <div class="div-heading">
+                  <h2>Dashboard</h2>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="form">
+                  <form action="#">
+
+                    <input type="search" name="" id="">
+
+                    <button class="inp-submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                      </svg></button>
+                  </form>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="top-last-main">
+                  <div class="ball-icon">
+                    <a href="#">
+                      <img src="./image/notification.png" alt="">
+                    </a>
+                  </div>
+                  <div class="main-dropdown">
+
+                    <div id="txt" class="div-list-val">
+
+                      <div class="div-user">
+                        <img width="50px" src="./image/staff.png" alt="">
+                        Anna Dsouza
+                      </div>
+
+                    </div>
+
+                    <div class="drop">
+
+                      <div class="option" data-flag="pk" data-code="+92">
+                        <div class="div-user">
+                          <img width="50px" src="./image/staff.png" alt="">
+                          Anna Dsouza
+                        </div>
+                        <div class="div-user">
+                          <img width="50px" src="./image/staff2.png" alt="">
+                          Anna Dsouza
+                        </div>
+                        <div class="div-user">
+                          <img width="50px" src="./image/staff3.png" alt="">
+                          Anna Dsouza
+                        </div>
+                        <div class="div-user">
+                          <img width="50px" src="./image/staff4.png" alt="">
+                          Anna Dsouza
+                        </div>
+                      </div>
+                      <!-- <div class="option" data-flag="uk" data-code="+44">flag2 +44</div>
+  <div class="option" data-flag="ind" data-code="+91">flag3 +91</div>
+  <div class="option" data-flag="us" data-code="+46">flag4 +46</div> -->
+                    </div>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-chevron-down" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg>
+
+                    <!-- <h3 class="drop-text"> Pharmacy Shop Name </h3> -->
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="container ">
+
+        <div class="inner-row">
+<div class="row second-row">
+
+  
+
+  <div class="col-lg-6  colum-1">
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Appointment No.
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Date
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Day
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+   
+</div>
+  <div class="col-lg-6 colum-2">
+
+    
+  </div>
+</div>
+</div>
+
+
+<div class="row row-calander"> 
+  <!-- <div class="div-heading-appoint">
+    <h3>Chose Available Timing</h3>
+  </div> -->
+<div class="col-lg-8 col-md-8 col-sm-12 calander-colum">
+  <div id="container">
+    <div id="header">
+      <div id="monthDisplay"></div>
+      <div>
+        <button class="calend-btn" id="backButton">Back</button>
+        <button class="calend-btn" id="nextButton">Next</button>
+      </div>
+    </div>
+
+    <div id="weekdays">
+      <div>Sunday</div>
+      <div>Monday</div>
+      <div>Tuesday</div>
+      <div>Wednesday</div>
+      <div>Thursday</div>
+      <div>Friday</div>
+      <div>Saturday</div>
+    </div>
+
+    <div id="calendar"></div>
+  </div>
+
+  <div id="newEventModal">
+    <h2>New Event</h2>
+
+    <input id="eventTitleInput" placeholder="Event Title" />
+
+    <button id="saveButton">Save</button>
+    <button id="cancelButton">Cancel</button>
+  </div>
+
+  <div id="deleteEventModal">
+    <h2>Event</h2>
+
+    <p id="eventText"></p>
+
+    <button id="deleteButton">Delete</button>
+    <button id="closeButton">Close</button>
+  </div>
+
+  <div id="modalBackDrop"></div>
+  
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-12 calander-colum colum-for-position calender-side-bar-inactive">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="div-status-main">
+        <div class="div-status-heading">
+          <h3> Active Timing </h3>
+          
+        </div>
+      
+      <div  class="div-active-time">
+        <label onclick="active()" for="" >
+        <input type="checkbox" name="" >
+      Active Sots  
+      <div  class="active_time div-dropdown-time-active drop-hidden">
+        <p  ><span>9:00 AM</span> <span>10:00 AM</span></p>
+      </div>
+      </label>
+        <label onclick="active2()" for="">
+        <input type="checkbox" name="" >
+      Inactive Sots 
+      <div  class="active_time2 div-dropdown-time-active drop-hidden2">
+        <p><span>9:00 AM</span> <span>10:00 AM</span></p>
+      </div> 
+      </label>
+      </div>
+      
+      
+        <!-- <div class="div-status-main">
+          <div class="div-status-heading">
+            <h3> Appointment Details  </h3>
+            <p><span class="day-status"> Yesterday</span>, <span class="date"> May 1</span></p>
+          </div>
+
+
+          
+
+          <div class="div-status">
+            <h4>Name: <span class="name">Adam</span></h4>
+  <div class="div-date">
+    <span class="status-time-from">  9:00 AM</span>
+    <span class="status-Time-to"> 10:00 AM</span>
+  </div>
+
+          </div>
+          <div class="div-status">
+            <h4>Name: <span class="name">Jhone</span></h4>
+  <div class="div-date">
+    <span class="status-time-from">  9:00 AM</span>
+    <span class="status-Time-to"> 10:00 AM</span>
+  </div>
+
+          </div>
+        </div> -->
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 calander-colum colum-for-position2 calender-side-bar-inactive">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="div-status-main">
+        <div class="div-status-heading">
+          <h3> Active Timing </h3>
+          
+        </div>
+      
+        <div  class="div-active-time">
+          <label onclick="active()" >
+          <input type="checkbox" name="" id="active">
+        Active Sots  
+        <div  class="active_time div-dropdown-time-active drop-hidden">
+          <p  ><span>9:00 AM</span> <span>10:00 AM</span></p>
+        </div>
+        </label>
+          <label for="inactive">
+          <input type="checkbox" name="" id="inactive">
+        Inactive Sots 
+        <div  class="active_time div-dropdown-time-active drop-hidden">
+          <p><span>9:00 AM</span> <span>10:00 AM</span></p>
+        </div> 
+        </label>
+        </div>
+      
+      
+      <div class="div-status-main">
+        <div class="div-status-heading">
+          <h3> Appointment Details  </h3>
+          <p><span class="day-status"> Yesterday</span>, <span class="date"> May 1</span></p>
+        </div>
+
+
+        
+
+        <div class="div-status">
+          <h4>Name: <span class="name">Adam</span></h4>
+<div class="div-date">
+  <span class="status-time-from">  9:00 AM</span>
+  <span class="status-Time-to"> 10:00 AM</span>
+</div>
+
+        </div>
+        <div class="div-status">
+          <h4>Name: <span class="name">Jhone</span></h4>
+<div class="div-date">
+  <span class="status-time-from">  9:00 AM</span>
+  <span class="status-Time-to"> 10:00 AM</span>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<style></style>
+        <div class="row third-row ">
+
+
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="div-image-for-sale">
+
+              
+
+              <div class="div-sale-report">
+                <ul class="sales-ul">
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1 ">
+                        
+
+                        <div class="div-details">
+                          <h3>Appointment </h3>
+                        </div>
+                      </div>
+                      <div class="div-colum1 ">
+                        
+
+                        <div class="div-details">
+                          <div class="div-dashbord-top-bar customer-page-search-bar">
+                          <div class="form">
+                            <form action="#">
+          
+                              <input type="search" name="" id="">
+          
+                              <button class="inp-submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                                </svg></button>
+                            </form>
+                          </div>
+                        </div>
+                        </div>
+                      
+                      </div>
+
+                      
+                    </div>
+                    <div class="div-list-items">
+
+                      <div class="div-colum1 ">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+
+                        <div class="div-details">
+                          <h5>Appointment </h5>
+                        </div>
+                      </div>
+
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <h5>Patient Name </h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <h5>Appointment Date</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <h5>Appointment Time</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <h5>Appointment Day </h5>
+                        </div>
+                      </div>
+                     
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <h5>Appointment Status</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <h5>Action </h5>
+                        </div>
+                      </div>
+                    </div>
+
+                  </li>
+
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  <li>
+
+                    <div class="div-list-items">
+
+                      <div class="div-colum1">
+                        <div class="div-checkbox">
+                          <form action="#">
+                            <input type="checkbox" name="" id="">
+                          </form>
+                        </div>
+                        
+                        <div class="div-details">
+                          <h5>1085</h5>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Jacob Jones
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">2023-03-24
+                            </span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">15:30:00</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> <span class="staff-catagory">Wednesday</span> </p>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <div class="div-statuse">
+                            <span class="Status Status-pending">
+                              Pending
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-colum1 Customers-colum">
+
+
+                        <div class="div-details">
+                          <p> 
+                            <span class=" Appoinment-page-view">
+                            <img src="./image/view.png" alt="">
+                            </span> 
+                            
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </li>
+                  
+                  
+                 
+                  
+                  
+                
+                
+                
+                 
+                 
+                 
+                
+                 
+                
+
+                </ul>
+              </div>
+
+              <div class="row second-row">
+
+  
+
+                <div class="col-lg-6  colum-1">
+                  <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Show Page 10
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">Show Page 20</a></li>
+                    <li><a class="dropdown-item" href="#">Show Page 50</a></li>
+                    <li><a class="dropdown-item" href="#">Show Page 100</a></li>
+                  </ul>
+                </div>
+              </div>
+                <div class="col-lg-6 colum-2">
+              
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  </div>
+<script src="./js/calender.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+  <script src="./js/myScript.js"></script>
+
+
+  
+</body>
+
+</html>
